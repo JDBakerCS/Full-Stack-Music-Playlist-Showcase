@@ -109,3 +109,123 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+.homePlayerFrameWrap {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.makePlaylistPage {
+  padding: 24px;
+  text-align: left;
+}
+
+.makePlaylistNav {
+  margin-bottom: 16px;
+}
+
+.makePlaylistNav a {
+  color: var(--text-h);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pageMessage {
+  margin-bottom: 16px;
+}
+
+.makePlaylistLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.songCatalog {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.songWidgetCard {
+  width: 100%;
+  max-width: 520px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg) 92%, var(--accent-bg) 8%);
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+.songWidgetMeta {
+  margin-bottom: 12px;
+}
+
+.songWidgetFrame {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.songToggleButton,
+.playlistForm button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font: inherit;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.playlistFormPanel {
+  position: sticky;
+  top: 24px;
+}
+
+.playlistForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.playlistForm input,
+.playlistForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.playlistForm textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+@media (max-width: 900px) {
+  .makePlaylistLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .songWidgetCard {
+    max-width: 100%;
+  }
+
+  .playlistFormPanel {
+    position: static;
+  }
+}

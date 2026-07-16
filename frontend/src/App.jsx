@@ -3,7 +3,6 @@ import HomePage from "./pages/HomePage";
 import MakePlaylistPage from "./pages/MakePlaylistPage"
 import PlaylistPage from "./pages/PlaylistPage"
 
-const API_URL = "http://localhost:6969";
 
 function App() {
 
