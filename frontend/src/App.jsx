@@ -9,8 +9,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/playlists" element={<PlaylistPage />} />
       <Route path="/playlists/new" element={<MakePlaylistPage />} />
-      <Route path="/playlists/:id" element={<PlaylistPage />} />
     </Routes>
   )
 }

@@ -4,7 +4,7 @@ const { Playlist, Song } = require("../models");
 
 
 
-
+//get all playlists
 router.get("/", async (req, res, next) => {
     try {
         const playlists = await Playlist.findAll();
@@ -14,7 +14,7 @@ router.get("/", async (req, res, next) => {
         next(error)
     }
 });
-
+//get one specific playlist
 router.get("/:id", async (req, res, next) => {
     try {
         const playlist = await Playlist.findByPk(req.params.id, {
@@ -29,6 +29,20 @@ router.get("/:id", async (req, res, next) => {
         next(error);
     }
 })
+//creat new playlist
+router.post("/", async (req, res, next) => {
+    try {
+        const playlist = await Playlist.create({
+            name: req.body.name,
+            description: req.body.description,
+        });
+        res.status(201).json(playlist)        
+    } catch (error) {
+        next(error)
+    }
+})
+
+//create new song (not used in app, but wired jic)
 router.post("/:playlistId/songs", async (req, res, next) => {
     try {
         const playlist = await Playlist.findByPk(req.params.playlistId, {
@@ -56,6 +70,19 @@ router.post("/:playlistId/songs", async (req, res, next) => {
         next(error);
     }
 });
+
+//delete playlist by id
+router.delete("/:playlistId", async (req, res, next) => {
+    try {
+        const playlist = await Playlist.findByPk(req.params.playlistId)
+        if (!playlist) return res.status(404).json({error: "Playlist not found"})
+        
+        await playlist.destroy();
+        res.sendStatus(204);
+    } catch (error) {
+        next(error)
+    }
+})
 
 router.delete("/:playlistId/songs/:songId", async (req, res, next) => {
     try {

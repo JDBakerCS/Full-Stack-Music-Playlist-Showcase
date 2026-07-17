@@ -1,6 +1,3 @@
-/* eslint-disable no-unreachable */
-/* eslint-disable no-undef */
-/* eslint-disable no-empty */
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -39,7 +36,7 @@ function MakePlaylistPage() {
         loadSongs()
     }, [])
 
-    function toggleSong(songId) {
+    function toggleSongToPlaylist(songId) {
 
         setSelectedSongIds((prev) => {
 
@@ -91,7 +88,7 @@ function MakePlaylistPage() {
                 )
             );
 
-            navigate(`/playlists/${newPlaylist.id}`);
+            navigate("/playlists");
 
             console.log(newPlaylist)
         } catch (error) {
@@ -109,7 +106,8 @@ function MakePlaylistPage() {
             <nav className="makePlaylistNav">
                 <Link to="/">Home</Link>
             </nav>
-
+            <nav><Link to="/playlists">Active Playlists</Link>
+            </nav>
             <h1>Pick Your Favorites For a Custom Playlist</h1>
 
             {loading && <p>Loading...</p>}
@@ -143,7 +141,7 @@ function MakePlaylistPage() {
                                 <button
                                     className="songToggleButton"
                                     type="button"
-                                    onClick={() => toggleSong(song.id)}
+                                    onClick={() => toggleSongToPlaylist(song.id)}
                                 >
                                     {isSelected ? "Remove" : "Add"}
                                 </button>
