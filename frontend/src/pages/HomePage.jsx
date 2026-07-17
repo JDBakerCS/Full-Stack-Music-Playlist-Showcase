@@ -55,7 +55,7 @@ function HomePage() {
                         <p className="homeIntro">
                             Listen to the full catalog, then build your own playlist from the songs
                             that hit hardest. If one track deserves repeat status, give it a home of
-                            its own.
+                            its own.  <br/><br/><em>*Adding one song multiple times coming soon*</em>
                         </p>
 
                         <div className="homePlayerCard">
@@ -77,7 +77,7 @@ function HomePage() {
                                 ? "Loading catalog..."
                                 : error
                                     ? error
-                                    : `${songs.length} songs are live in the catalog.`}
+                                    : `${songs.length} songs are live in the catalog. Scroll on the widget for full list`}
                         </p>
                     </article>
                 </section>
