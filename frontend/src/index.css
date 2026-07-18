@@ -7,6 +7,7 @@
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
+  --spotify-green: #1db954;
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -180,13 +181,13 @@ code {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border);
+  border: 1px solid var(--spotify-green);
   border-radius: 999px;
   padding: 10px 16px;
   font: inherit;
   font-weight: 600;
-  background: var(--accent-bg);
-  color: var(--text-h);
+  background: var(--spotify-green);
+  color: #000;
   text-decoration: none;
   cursor: pointer;
 }
@@ -269,21 +270,13 @@ code {
 
 .playlistToggleButton,
 .playlistDeleteButton {
-  border: 1px solid var(--border);
+  border: 1px solid var(--spotify-green);
   border-radius: 999px;
   padding: 10px 16px;
   font: inherit;
   cursor: pointer;
-}
-
-.playlistToggleButton {
-  background: var(--accent-bg);
-  color: var(--text-h);
-}
-
-.playlistDeleteButton {
-  background: transparent;
-  color: var(--text-h);
+  background: var(--spotify-green);
+  color: #000;
 }
 
 .playlistDropdown {
@@ -332,10 +325,19 @@ code {
   margin-bottom: 16px;
 }
 
-.makePlaylistNav a {
-  color: var(--text-h);
-  text-decoration: none;
+.makePlaylistPage nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--spotify-green);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font: inherit;
   font-weight: 600;
+  background: var(--spotify-green);
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .pageMessage {
@@ -381,12 +383,12 @@ code {
 
 .songToggleButton,
 .playlistForm button {
-  border: 1px solid var(--border);
+  border: 1px solid var(--spotify-green);
   border-radius: 999px;
   padding: 10px 16px;
   font: inherit;
-  background: var(--accent-bg);
-  color: var(--text-h);
+  background: var(--spotify-green);
+  color: #000;
   cursor: pointer;
 }
 
